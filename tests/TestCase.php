@@ -4,7 +4,7 @@ namespace Troccoli\LaravelQueueMonitorFlux\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Troccoli\LaravelQueueMonitorFlux\LaravelQueueMonitorFluxServiceProvider;
+use Troccoli\LaravelQueueMonitorFlux\QueueMonitorFluxServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -20,7 +20,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            LaravelQueueMonitorFluxServiceProvider::class,
+            QueueMonitorFluxServiceProvider::class,
         ];
     }
 
