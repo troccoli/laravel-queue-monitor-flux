@@ -20,8 +20,7 @@
         "php": "^8.5",
         "illuminate/contracts": "^13.0",
         "livewire/flux": "^2.0",
-        "romanzipp/laravel-queue-monitor": "^5.4",
-        "spatie/laravel-package-tools": "^1.16"
+        "romanzipp/laravel-queue-monitor": "^5.4"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
@@ -37,8 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Troccoli\\LaravelQueueMonitorFlux\\": "src/",
-            "Troccoli\\LaravelQueueMonitorFlux\\Database\\Factories\\": "database/factories/"
+            "Troccoli\\LaravelQueueMonitorFlux\\": "src/"
         }
     },
     "autoload-dev": {
@@ -65,11 +63,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Troccoli\\LaravelQueueMonitorFlux\\LaravelQueueMonitorFluxServiceProvider"
-            ],
-            "aliases": {
-                "LaravelQueueMonitorFlux": "Troccoli\\LaravelQueueMonitorFlux\\Facades\\LaravelQueueMonitorFlux"
-            }
+                "Troccoli\\LaravelQueueMonitorFlux\\QueueMonitorFluxServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
