@@ -1,84 +1,46 @@
-# This is my package laravel-queue-monitor-flux
+![Queue Monitor dashboard showing pending, processing, completed, and failed jobs](images/queue-monitor-flux.png)
+
+# Laravel Queue Monitor Flux
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/troccoli/laravel-queue-monitor-flux.svg?style=flat-square)](https://packagist.org/packages/troccoli/laravel-queue-monitor-flux)
-[![GitHub Tests Action Status](https://github.com/spatie/package-laravel-queue-monitor-flux-laravel/actions/workflows/run-tests.yml/badge.svg)](https://github.com/troccoli/laravel-queue-monitor-flux/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://github.com/spatie/package-laravel-queue-monitor-flux-laravel/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/troccoli/laravel-queue-monitor-flux/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![License](https://img.shields.io/packagist/l/troccoli/laravel-queue-monitor-flux.svg?style=flat-square)](https://packagist.org/packages/troccoli/laravel-queue-monitor-flux)
 [![Total Downloads](https://img.shields.io/packagist/dt/troccoli/laravel-queue-monitor-flux.svg?style=flat-square)](https://packagist.org/packages/troccoli/laravel-queue-monitor-flux)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Laravel Queue Monitor Flux replaces the default views from [`romanzipp/laravel-queue-monitor`](https://github.com/romanzipp/Laravel-Queue-Monitor) with templates built using [Flux UI](https://fluxui.dev/). The package registers its view overrides automatically when installed; publish the templates if you want to customize them in your application.
 
-## Support us
+## Requirements
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-queue-monitor-flux.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-queue-monitor-flux)
+- PHP 8.5 or later
+- Laravel 13
+- [`romanzipp/laravel-queue-monitor`](https://github.com/romanzipp/Laravel-Queue-Monitor) 5.4 or later
+- [`livewire/flux`](https://fluxui.dev/) 2.13 or later in the 2.x series
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+Composer installs the Queue Monitor and Flux dependencies alongside this package.
 
 ## Installation
 
-You can install the package via composer:
+Install the package with Composer:
 
 ```bash
 composer require troccoli/laravel-queue-monitor-flux
 ```
 
-You can publish and run the migrations with:
+Laravel discovers the service provider automatically. The Flux templates are then used in place of Queue Monitor's default views.
+
+## Publish and customize the views
+
+To publish the Blade templates into your application, run:
 
 ```bash
-php artisan vendor:publish --tag="laravel-queue-monitor-flux-migrations"
-php artisan migrate
+php artisan vendor:publish --provider="Troccoli\LaravelQueueMonitorFlux\QueueMonitorFluxServiceProvider" --tag=views
 ```
 
-You can publish the config file with:
+The templates are published to `resources/views/vendor/queue-monitor-flux`. You can edit those files to tailor the interface to your application. Published templates take precedence over the package's built-in templates.
 
-```bash
-php artisan vendor:publish --tag="laravel-queue-monitor-flux-config"
-```
+## Configure Laravel Queue Monitor
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-queue-monitor-flux-views"
-```
-
-## Usage
-
-```php
-$laravelQueueMonitorFlux = new Troccoli\LaravelQueueMonitorFlux();
-echo $laravelQueueMonitorFlux->echoPhrase('Hello, Troccoli!');
-```
-
-## Testing
-
-```bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [Giulio Troccoli-Allard](https://github.com/troccoli)
-- [All Contributors](../../contributors)
+This package only supplies the Flux UI views. Configure queues, storage, pruning, authorization, and the rest of Laravel Queue Monitor using the [Laravel Queue Monitor documentation](https://github.com/romanzipp/Laravel-Queue-Monitor#documentation).
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+Laravel Queue Monitor Flux is open-sourced software licensed under the [MIT license](LICENSE.md).
