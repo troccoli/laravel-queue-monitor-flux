@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.5",
         "illuminate/contracts": "^13.0",
-        "livewire/flux": "^2.0",
+        "livewire/flux": "^2.13",
         "romanzipp/laravel-queue-monitor": "^5.4"
     },
     "require-dev": {

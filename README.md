@@ -13,7 +13,7 @@ Laravel Queue Monitor Flux replaces the default views from [`romanzipp/laravel-q
 - PHP 8.5 or later
 - Laravel 13
 - [`romanzipp/laravel-queue-monitor`](https://github.com/romanzipp/Laravel-Queue-Monitor) 5.4 or later
-- [`livewire/flux`](https://fluxui.dev/) 2.x
+- [`livewire/flux`](https://fluxui.dev/) 2.13 or later in the 2.x series
 
 Composer installs the Queue Monitor and Flux dependencies alongside this package.
 
